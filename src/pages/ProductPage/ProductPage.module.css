@@ -1,0 +1,160 @@
+.page {
+  padding: 40px 24px 80px;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Хлебные крошки */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+  font-size: 14px;
+}
+
+.crumb {
+  color: #6e6e78;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.crumb:hover {
+  color: #111;
+}
+
+.crumbSep {
+  color: #c5c5cc;
+}
+
+.crumbCurrent {
+  color: #111;
+  font-weight: 500;
+}
+
+/* Двухколоночный макет */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* Левая колонка — картинка */
+.gallery {
+  position: sticky;
+  top: 88px; /* под высоту шапки */
+}
+
+.imageWrap {
+  aspect-ratio: 4 / 3;
+  background-color: #f5f5f7;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Правая колонка — информация */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 8px;
+}
+
+.category {
+  align-self: flex-start;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6d5efc;
+  background-color: rgba(109, 94, 252, 0.1);
+  border-radius: 999px;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #111;
+}
+
+.desc {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #6e6e78;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.price {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111;
+}
+
+.buy {
+  align-self: flex-start;
+  margin-top: 8px;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #6d5efc;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.buy:hover {
+  background-color: #574be0;
+}
+
+.buy:active {
+  transform: scale(0.97);
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .gallery {
+    position: static;
+  }
+}
+
+@media (max-width: 560px) {
+  .page {
+    padding: 24px 16px 56px;
+  }
+
+  .buy {
+    width: 100%;
+    align-self: stretch;
+  }
+}

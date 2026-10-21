@@ -1,4 +1,6 @@
+import { Link } from 'react-router'
 import s from './CatalogCard.module.css'
+import { PATH } from '../../../routing/Routing'
 export function CatalogCard() {
     return (
         <article className={s.card}>
@@ -15,9 +17,11 @@ export function CatalogCard() {
                 <p className={s.desc}>Короткое описание в одну строку</p>
                 <div className={s.footer}>
                     <span className={s.price}>2 490 ₽</span>
-                    <button className={s.buy} type="button">
+                    <Link to={PATH.Product}>
+                        <button className={s.buy} type="button">
                         Купить
                     </button>
+                    </Link>
                 </div>
             </div>
         </article>

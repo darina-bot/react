@@ -1,3 +1,5 @@
+import { Link } from 'react-router';
+import { PATH } from '../../routing/Routing';
 import s from './Header.module.css'
 
 export function Header() {
@@ -5,27 +7,27 @@ export function Header() {
         <header className={s.header}>
             <div className="container">
                 <div className={s.header__inner}>
-                    <a href="/" className={s.logo}>
+                    <Link to={PATH.Home} className={s.logo}>
                         <span className={s.logoMark}>◆</span>
                         <span className={s.logoText}>BrandName</span>
-                    </a>
+                    </Link>
 
                     <nav className={s.nav} aria-label="Основная навигация">
                         <ul className={s.navList}>
                             <li>
-                                <a href="#" className={s.navLink}>
+                                <Link to={PATH.Home} className={s.navLink}>
                                     Главная
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="#" className={s.navLink}>
+                                <Link to={PATH.Catalog} className={s.navLink}>
                                     Каталог
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="#" className={s.navLink}>
+                                <Link to="/cart" className={s.navLink}>
                                     Корзина
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </nav>
