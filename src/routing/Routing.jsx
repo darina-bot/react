@@ -7,7 +7,7 @@ import { PageNotFound } from "../pages/PageNotFound/PageNotFound"
 export const PATH = {
     Home: '/',
     Catalog: '/catalog',
-    Product: '/product',
+    Product: '/product/:id',
     NotFound: '*'
 }
 

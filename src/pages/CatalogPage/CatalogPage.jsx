@@ -1,4 +1,5 @@
 import { Catalog } from "../../components/Catalog/Catalog";
+import { Categories } from "../../components/Categories/Categories";
 import s from './CatalogPage.module.css'
 
 export function CatalogPage() {
@@ -8,6 +9,7 @@ export function CatalogPage() {
                 <header className={s.head}>
                     <h2 className={s.title}>Каталог</h2>
                     <p className={s.subtitle}>Подберите то, что подходит именно вам</p>
+                    <Categories/>
                 </header>
 
                 <Catalog/>
