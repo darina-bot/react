@@ -1,13 +1,27 @@
 import { Link, useParams } from 'react-router'
 import s from './ProductPage.module.css'
-import { categories, products } from '../../../dist/assets/data';
 import { PATH } from '../../routing/Routing';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 export function ProductPage() {
+    const [product, setProduct] = useState({});
+    const [category, setCategory] = useState({});
+    const { id } = useParams();
 
-    const {id} = useParams();
-    const product = products.find(product => product.id == id);
-    const category = categories.find(category => category.id == product.categoryId);
+    useEffect(() => {
+        (async function load() {
+
+            const prodRes = await fetch('http://localhost:3000/products/' + id);
+            const productFromServer = await prodRes.json();
+            setProduct(productFromServer);
+
+            const catRes = await fetch ('http://localhost:3000/categories/'+productFromServer.categoryId);
+            const categoryFromServer = await catRes.json();
+            setCategory(categoryFromServer);
+
+        })();
+    }, [id]);
 
     return (
         <section className={s.page}>
